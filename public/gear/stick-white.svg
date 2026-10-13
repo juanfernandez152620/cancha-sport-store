@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#FAFBFC"/><stop offset="1" stop-color="#E7EAEF"/></radialGradient>
+  <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".45" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="600" height="600" fill="url(#bg)"/>
+<ellipse cx="300" cy="540" rx="210" ry="18" fill="#000" opacity=".12"/>
+
+<g transform="rotate(28 300 300)">
+  <path d="M300 40 L300 430 C300 500 268 532 226 532 C190 532 176 502 196 484 C214 470 238 486 250 470" fill="none" stroke="#F3F3F1" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 40 L300 430 C300 500 268 532 226 532 C190 532 176 502 196 484" fill="none" stroke="url(#sheen)" stroke-width="30" stroke-linecap="round"/>
+  <rect x="285" y="34" width="30" height="150" rx="15" fill="#2a2a30"/>
+  <path d="M285 52 L315 44" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><path d="M285 67 L315 59" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><path d="M285 82 L315 74" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><path d="M285 97 L315 89" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><path d="M285 112 L315 104" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><path d="M285 127 L315 119" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><path d="M285 142 L315 134" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><path d="M285 157 L315 149" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><path d="M285 172 L315 164" stroke="#fff" stroke-opacity=".18" stroke-width="3"/>
+  <rect x="285" y="210" width="30" height="16" fill="#F39BC0"/>
+  <rect x="285" y="236" width="30" height="6" fill="#F39BC0"/>
+  <path d="M285 300 L315 360 L315 392 L285 332 Z" fill="#F39BC0"/>
+  <path d="M300 410 C300 480 276 512 236 516" fill="none" stroke="#F39BC0" stroke-width="6" stroke-linecap="round"/>
+  <text x="300" y="300" transform="rotate(-90 300 300)" text-anchor="middle" font-family="Arial Black, Arial" font-weight="900" font-style="italic" font-size="21" fill="#F39BC0" letter-spacing="2">CANCHA</text>
+</g>
+</svg>

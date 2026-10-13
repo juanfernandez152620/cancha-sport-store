@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+/* Night-match palette: deep navy pitch under stadium lights, neon only where the eye should go.
+   volt = buy/primary, cyan = hombre/info, magenta = mujer/accents, flame = hockey/heat. */
+@theme {
+  --color-ink: #040a1c;
+  --color-night: #071331;
+  --color-deep: #0a1a42;
+  --color-navy: #10255a;
+  --color-line: #1d3170;
+  --color-mist: #8fa3d6;
+  --color-fog: #bccaee;
+  --color-chalk: #eef3ff;
+  --color-volt: #d4ff1e;
+  --color-cyan: #19e3ff;
+  --color-magenta: #ff2d87;
+  --color-flame: #ff8a1e;
+  --color-photo: #eef0f3;
+
+  --font-sans: var(--font-archivo), "Segoe UI", system-ui, sans-serif;
+  --font-display: var(--font-archivo), "Arial Narrow", system-ui, sans-serif;
+
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.1, 1);
+  --breakpoint-xs: 26rem;
+}
+
+:root {
+  color-scheme: dark;
+  --header-h: 64px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --max: 1360px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 76px;
+  }
+}
+
+html {
+  scroll-padding-top: calc(var(--header-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-chalk);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-volt);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--color-volt);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Condensed italic headline type, the brand's loudest voice */
+@utility display {
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: -0.005em;
+}
+
+@utility display-wide {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* parallelogram, the motif of the three speed bars */
+@utility slant {
+  clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility text-outline {
+  -webkit-text-stroke: 1.5px currentColor;
+  color: transparent;
+}
+
+/* Product photos sit on a light studio tile, like the brand shots they come from */
+@utility photo-tile {
+  background: radial-gradient(120% 90% at 50% 35%, #ffffff 0%, var(--color-photo) 70%, #e2e6ec 100%);
+}
+
+@utility glow-volt {
+  box-shadow: 0 0 0 1px rgb(212 255 30 / 0.6), 0 0 24px -4px rgb(212 255 30 / 0.55);
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 48px;
+    padding: 0 1.4rem;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-stretch: 85%;
+    border-radius: 999px;
+    transition:
+      transform 0.18s var(--ease-snap),
+      background-color 0.2s,
+      color 0.2s,
+      box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn-volt {
+    background: var(--color-volt);
+    color: var(--color-ink);
+  }
+  .btn-volt:hover {
+    box-shadow: 0 10px 30px -8px rgb(212 255 30 / 0.6);
+  }
+  .btn-ghost {
+    background: rgb(255 255 255 / 0.06);
+    color: var(--color-chalk);
+    box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / 0.18);
+  }
+  .btn-ghost:hover {
+    background: rgb(255 255 255 / 0.12);
+  }
+  .btn:disabled {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 38px;
+    padding: 0 0.95rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--color-fog);
+    background: rgb(255 255 255 / 0.05);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12);
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      box-shadow 0.2s;
+  }
+  .chip:hover {
+    color: var(--color-chalk);
+    background: rgb(255 255 255 / 0.1);
+  }
+  .chip[aria-pressed="true"],
+  .chip[aria-current="page"],
+  .chip[aria-selected="true"] {
+    color: var(--color-ink);
+    background: var(--color-volt);
+    box-shadow: none;
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-stretch: 110%;
+  }
+  .card-surface {
+    background: linear-gradient(180deg, rgb(16 37 90 / 0.82), rgb(7 19 49 / 0.9));
+    box-shadow: inset 0 0 0 1px rgb(143 163 214 / 0.14);
+    backdrop-filter: blur(6px);
+  }
+}
+
+/* marquee for the announcement strip */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(0) skewX(-20deg);
+  }
+  45%,
+  100% {
+    transform: translateX(650%) skewX(-20deg);
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.12) translate3d(1.5%, 1%, 0);
+  }
+  to {
+    transform: scale(1) translate3d(-1%, -1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

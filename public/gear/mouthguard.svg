@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#FAFBFC"/><stop offset="1" stop-color="#E7EAEF"/></radialGradient>
+  <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".45" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="600" height="600" fill="url(#bg)"/>
+<ellipse cx="300" cy="520" rx="190" ry="20" fill="#000" opacity=".12"/>
+
+<path d="M160 230 C160 160 220 120 300 120 C380 120 440 160 440 230 L440 330 C440 360 410 370 390 350 C360 320 340 300 300 300 C260 300 240 320 210 350 C190 370 160 360 160 330 Z" fill="#D9FF1E" opacity=".85"/>
+<path d="M190 230 C190 175 240 150 300 150 C360 150 410 175 410 230" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="12" stroke-linecap="round"/>
+<path d="M200 300 C230 270 260 262 300 262 C340 262 370 270 400 300" fill="none" stroke="#15161A" stroke-width="6" opacity=".35"/>
+<rect x="240" y="400" width="120" height="70" rx="20" fill="#15161A"/>
+<text x="300" y="444" text-anchor="middle" font-family="Arial Black, Arial" font-size="18" fill="#D9FF1E" font-style="italic">CANCHA</text>
+</svg>
